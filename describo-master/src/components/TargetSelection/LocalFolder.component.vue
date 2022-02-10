@@ -4,19 +4,15 @@
                 Select a folder on this computer
             </div> -->
         <div class="my-4">
-            <el-button
+            <button
                 type="primary"
                 @click="selectFolder"
-                round
-                class="focus:outline-none focus:border-2 focus:border-blue-600"
-            >
-                <i class="fas fa-folder-open"></i> Select a folder on this
-                computer
-            </el-button>
+                class="bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            > SELECT FOLDER
+            </button>
         </div>
-        <div class="my-4 text-gray-600">
-            This includes remote resources like Dropbox and corporate file
-            shares which are connected to this machine.
+        <div class="my-4 text-gray-600" style="font-style:italic">
+            CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
         </div>
     </div>
 </template>

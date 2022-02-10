@@ -15,20 +15,27 @@
                 class="ml-2 text-xl text-gray-700 font-light"
             />
         </div>
-        <div class="flex flex-col" v-if="!target">
-            <div
-                class="text-2xl text-center bg-yellow-200 text-gray-800 font-light py-10"
-            >
-                Get started by selecting the content you wish to describe.
-            </div>
+    
             <!-- <div class="text-lg text-center text-indigo-700">
                 The RO-crate metadata file will be automatically saved to this
                 location as you construct it.
             </div> -->
+
+           
+        <div class="flex items-center justify-center">
+            <div class="w-40 h-40 bg-gray-300 rounded-full">
+            </div>
+        </div>
+
             <div class="flex flex-col">
-                <el-tabs class="mt-4 p-4 style-tab-container bg-gray-200">
-                    <el-tab-pane label="Local Folders">
-                        <span
+                <local-folder-component
+                            @set-target="setTarget"
+                            @browse-target="setBrowseTarget"
+                        />
+           
+              <!--  <el-tabs class="mt-4 p-4 style-tab-container bg-gray-200">
+                    <el-tab-pane>
+                       <span
                             slot="label"
                             class="text-xl text-gray-700 font-light"
                         >
@@ -38,7 +45,7 @@
                             @set-target="setTarget"
                             @browse-target="setBrowseTarget"
                         />
-                    </el-tab-pane>
+                    </el-tab-pane>-->
                     <!-- <el-tab-pane label="Amazon S3">
                         <amazon-s3-component @set-target="setTarget" />
                     </el-tab-pane>
@@ -50,7 +57,7 @@
                             @set-target="setTarget"
                         />
                     </el-tab-pane> -->
-                </el-tabs>
+                
                 <div class="flex flex-col p-4 mt-4 border" v-if="browseTarget">
                     <div class="flex flex-row">
                         <div class="text-2xl font-light text-gray-800 pt-2">
@@ -77,7 +84,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
