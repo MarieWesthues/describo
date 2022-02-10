@@ -1,0 +1,401 @@
+{
+    "metadata": {
+        "name": "PARADISEC Describo Profile",
+        "version": 1.1
+    },
+    "items": {
+        "Collection": {
+            "metadata": {
+                "about": "A profile to describe a PARADISEC collection.",
+                "allowAdditionalProperties": false
+            },
+            "inputs": [
+                {
+                    "property": "additionalType",
+                    "label": "Additional Type",
+                    "@type": "Value",
+                    "value": "collection",
+                    "group": "important",
+                    "multiple": false
+                },
+                {
+                    "property": "name",
+                    "label": "Title",
+                    "@type": "Text",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                },
+                {
+                    "property": "description",
+                    "label": "Description",
+                    "@type": "TextArea",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                },
+                {
+                    "property": "contributor",
+                    "label": "Contributor",
+                    "@type": "Person",
+                    "required": true,
+                    "group": "important"
+                },
+                {
+                    "property": "comments",
+                    "label": "Comments",
+                    "@type": "Text"
+                },
+                {
+                    "property": "dateCreated",
+                    "@type": "Date",
+                    "multiple": false
+                },
+                {
+                    "property": "dateModified",
+                    "@type": "Date",
+                    "multiple": false
+                },
+                {
+                    "property": "depositFormReceived",
+                    "@type": "Date",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:depositFormReceived",
+                        "@type": "Property",
+                        "name": "depositFormReceived",
+                        "description": "Whether or not the deposit form for this item has been received."
+                    }
+                },
+                {
+                    "property": "license",
+                    "@type": "License",
+                    "multiple": false
+                },
+                {
+                    "property": "media",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:media",
+                        "@type": "Property",
+                        "name": "media",
+                        "description": "."
+                    }
+                },
+                {
+                    "property": "orthographicNotes",
+                    "@type": "TextArea",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:orthographicNotes",
+                        "@type": "Property",
+                        "name": "orthographicNotes",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "private",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:private",
+                        "@type": "Property",
+                        "name": "private"
+                    }
+                },
+                {
+                    "property": "https://paradisec.org.au/contentLanguages",
+                    "@type": "Language"
+                },
+                {
+                    "property": "subjectLanguages",
+                    "@type": "Language"
+                },
+                {
+                    "property": "contentLocation",
+                    "@type": "Place",
+                    "multiple": false
+                }
+            ]
+        },
+        "Item": {
+            "metadata": {
+                "about": "A profile to describe a PARADISEC item.",
+                "allowAdditionalProperties": false
+            },
+            "inputs": [
+                {
+                    "property": "additionalType",
+                    "label": "Additional Type",
+                    "@type": "Value",
+                    "value": "item",
+                    "group": "important",
+                    "multiple": false
+                },
+                {
+                    "property": "name",
+                    "label": "Title",
+                    "@type": "Text",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                },
+                {
+                    "property": "description",
+                    "label": "Description",
+                    "@type": "TextArea",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                },
+                {
+                    "property": "contributor",
+                    "label": "Contributor",
+                    "@type": "Person",
+                    "required": true,
+                    "group": "important"
+                },
+                {
+                    "property": "dateCreated",
+                    "@type": "Date",
+                    "multiple": false
+                },
+                {
+                    "property": "dateModified",
+                    "@type": "Date",
+                    "multiple": false
+                },
+                {
+                    "property": "adminComment",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:adminComment",
+                        "@type": "Property",
+                        "name": "adminComment",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "dialect",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:dialect",
+                        "@type": "Property",
+                        "name": "dialect",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "digitisedOn",
+                    "@type": "Date",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:digitisedOn",
+                        "@type": "Property",
+                        "name": "digitisedOn",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "discourseType",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:discourseType",
+                        "@type": "Property",
+                        "name": "discourseType",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "external",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:external",
+                        "@type": "Property",
+                        "name": "external",
+                        "description": ""
+                    }
+                },
+
+                {
+                    "property": "bornDigital",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:bornDigital",
+                        "@type": "Property",
+                        "name": "bornDigital",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "citeAs",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:citeAs",
+                        "@type": "Property",
+                        "name": "citeAs",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "ingestNotes",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:ingestNotes",
+                        "@type": "Property",
+                        "name": "ingestNotes",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "languageAsGiven",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:languageAsGiven",
+                        "@type": "Property",
+                        "name": "languageAsGiven",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "license",
+                    "@type": "License",
+                    "multiple": false
+                },
+                {
+                    "property": "hasPart",
+                    "@type": ["'File"]
+                },
+                {
+                    "property": "contentLanguages",
+                    "@type": "Language"
+                },
+                {
+                    "property": "subjectLanguages",
+                    "@type": "Language"
+                },
+                {
+                    "property": "private",
+                    "@type": "Text",
+                    "multiple": false
+                },
+                {
+                    "property": "originatedOn",
+                    "@type": "Date",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:originatedOn",
+                        "@type": "Property",
+                        "name": "originatedOn",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "originatedOnNarrative",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:originatedOnNarrative",
+                        "@type": "Property",
+                        "name": "originatedOnNarrative",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "receivedOn",
+                    "@type": "Text",
+                    "multiple": false,
+                    "definition": {
+                        "@id": "_:receivedOn",
+                        "@type": "Property",
+                        "name": "receivedOn",
+                        "description": ""
+                    }
+                },
+                {
+                    "property": "publisher",
+                    "@type": "Organization"
+                },
+                {
+                    "property": "contentLocation",
+                    "@type": "Place",
+                    "multiple": false
+                }
+            ]
+        }
+    },
+    "typeDefinitions": {
+        "GeoBox": {
+            "metadata": {
+                "allowAdditionalProperties": false,
+                "mapToType": "GeoShape"
+            },
+            "inputs": [
+                {
+                    "property": "name",
+                    "@type": "Text",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                },
+                {
+                    "property": "box",
+                    "@type": "Text",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important"
+                }
+            ]
+        },
+        "License": {
+            "metadata": {
+                "allowAdditionalProperties": false
+            },
+            "inputs": [
+                {
+                    "property": "name",
+                    "@type": "Select",
+                    "required": true,
+                    "multiple": false,
+                    "group": "important",
+                    "options": [
+                        "Open (subject to agreeing to PDSC access conditions",
+                        "Closed (subject to the access condition details)",
+                        "Mixed (check individual items)",
+                        "As yet unspecified"
+                    ]
+                },
+                {
+                    "property": "description",
+                    "@type": "TextArea",
+                    "multiple": false
+                }
+            ]
+        },
+        "Language": {
+            "metadata": {
+                "allowAdditionalProperties": false
+            }
+        }
+    },
+    "enabledCoreTypes": [
+        "ContactPoint",
+        "GeoBox",
+        "Person",
+        "Organization",
+        "PropertyValue"
+    ],
+    "dataPacks": [
+        "https://raw.githubusercontent.com/UTS-eResearch/describo-data-packs/master/ISO-639-6-language-data/iso-639-6-language-data-pack.json",
+        "https://raw.githubusercontent.com/UTS-eResearch/describo-data-packs/master/ISO-639-6-country-data/iso-639-6-country-data-pack.json"
+    ]
+}

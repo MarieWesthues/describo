@@ -1,0 +1,142 @@
+{
+    "name": "describo",
+    "version": "0.13.0",
+    "description": "The tool to describe and package data.",
+    "main": "index.js",
+    "scripts": {
+        "develop": "npm install && npm run postinstall && electron-webpack dev",
+        "compile": "npm install && electron-webpack",
+        "dist": "npm run compile && electron-builder",
+        "dist:dir": "npm run dist --dir -c.compression=store -c.mac.identity=null",
+        "test": "./node_modules/.bin/jest",
+        "test:watch": "./node_modules/.bin/jest --watch",
+        "build:mac": "electron-webpack && electron-builder --mac --publish always",
+        "build:linux": "electron-webpack && electron-builder --linux --publish always",
+        "build:win": "./bin/build-windows.sh",
+        "postinstall": "./node_modules/.bin/electron-rebuild",
+        "ghpages": "./node_modules/.bin/webpack --watch  --config  github-pages/webpack.config.js"
+    },
+    "build": {
+        "afterSign": "bin/notarize.js",
+        "appId": "au.edu.uts.describo",
+        "productName": "Describo",
+        "copyright": "Copyright © 2020 University of Technology Sydney",
+        "mac": {
+            "hardenedRuntime": true,
+            "gatekeeperAssess": false,
+            "entitlements": "./mac.plist",
+            "entitlementsInherit": "./mac.plist",
+            "target": [
+                "dmg",
+                "zip"
+            ]
+        },
+        "dmg": {
+            "sign": false
+        },
+        "win": {},
+        "linux": {
+            "target": "tar.bz2"
+        },
+        "publish": [
+            "github"
+        ],
+        "extraFiles": [
+            {
+                "from": "rclone-binaries/${os}",
+                "to": "Resources/bin",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ]
+    },
+    "electronWebpack": {
+        "renderer": {
+            "webpackConfig": "webpack.extra-config.js"
+        }
+    },
+    "author": "Marco La Rosa",
+    "license": "GPLv3",
+    "homepage": "https://github.com/UTS-eResearch/describo",
+    "bugs": {
+        "url": "https://github.com/UTS-eResearch/describo/issues"
+    },
+    "engines": {
+        "node": ">=12.0.0",
+        "npm": ">=6.0.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.14.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.30",
+        "archiver": "^4.0.2",
+        "core-js": "^3.6.5",
+        "date-fns": "^2.15.0",
+        "default-passive-events": "^2.0.0",
+        "describo-data-service": "github:UTS-eResearch/describo-data-service",
+        "electron-store": "^6.0.0",
+        "electron-updater": "^4.3.1",
+        "element-ui": "^2.13.2",
+        "fs-extra": "^9.0.1",
+        "hasha": "^5.2.0",
+        "highlight.js": "^10.1.1",
+        "iv-viewer": "^2.0.1",
+        "jsonld": "^3.1.1",
+        "lodash": "^4.17.19",
+        "regenerator-runtime": "^0.13.5",
+        "ro-crate": "^1.4.1",
+        "ro-crate-html-js": "^1.2.22",
+        "sha.js": "^2.4.11",
+        "source-map-support": "^0.5.19",
+        "sqlite3": "^5.0.0",
+        "tailwindcss": "^1.5.1",
+        "tempy": "^0.6.0",
+        "validator": "^13.1.1",
+        "vue": "^2.5.22",
+        "vue-router": "^3.3.4",
+        "vuex": "^3.5.1",
+        "walk": "^2.3.14"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.10.5",
+        "@babel/plugin-proposal-optional-chaining": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/preset-env": "^7.10.4",
+        "autoprefixer": "^9.8.5",
+        "babel-loader": "^8.1.0",
+        "chai": "^4.2.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "connect-history-api-fallback": "^1.6.0",
+        "copy-webpack-plugin": "^6.0.3",
+        "css-loader": "^3.6.0",
+        "dotenv": "^8.2.0",
+        "electron": "^9.1.0",
+        "electron-builder": "^22.7.0",
+        "electron-notarize": "^1.0.0",
+        "electron-rebuild": "^1.11.0",
+        "electron-webpack": "^2.8.2",
+        "electron-webpack-vue": "^2.4.0",
+        "file-loader": "^6.0.0",
+        "html-loader": "^1.1.0",
+        "html-webpack-plugin": "^4.3.0",
+        "jest": "^26.1.0",
+        "jquery": "^3.5.1",
+        "mini-css-extract-plugin": "^0.9.0",
+        "node-abi": "^2.18.0",
+        "node-sass": "^4.14.1",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "postcss-loader": "^3.0.0",
+        "raw-loader": "^4.0.1",
+        "sass-loader": "^9.0.2",
+        "terser-webpack-plugin": "^3.0.7",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "vue-loader": "^15.9.3",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.5.22",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0",
+        "worker-loader": "^2.0.0"
+    }
+}
