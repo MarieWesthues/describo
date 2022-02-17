@@ -13,7 +13,17 @@
         </div>
         <div class="my-4 text-gray-600" style="font-style:italic">
             CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
+                    <el-button
+                        size="mini"
+                        type="primary"
+                        circle
+                        class=" focus:outline-none focus:border-2 focus:border-blue-600"
+                    >
+                        <i class="fas fa-question fa-fw"></i>
+                    </el-button> 
+               
         </div>
+    
     </div>
 </template>
 
