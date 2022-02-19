@@ -1,3 +1,4 @@
+//hier werden die möglichen Properties, die als Metadaten hinzugefügt werden, definiert
 export default {
     metadata: {
         name: "Describo Default Profile",
