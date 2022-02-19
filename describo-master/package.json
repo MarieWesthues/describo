@@ -69,6 +69,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.30",
+        "@popperjs/core": "2.9.1",
         "archiver": "^4.0.2",
         "core-js": "^3.6.5",
         "date-fns": "^2.15.0",
@@ -93,6 +94,7 @@
         "tempy": "^0.6.0",
         "validator": "^13.1.1",
         "vue": "^2.5.22",
+        "vue-popperjs": "^2.3.0",
         "vue-router": "^3.3.4",
         "vuex": "^3.5.1",
         "walk": "^2.3.14"
