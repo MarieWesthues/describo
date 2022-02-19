@@ -40,8 +40,10 @@ export default {
             let folder = await remote.dialog.showOpenDialog({
                 properties: ["openDirectory"],
             });
-            this.folder = folder.filePaths[0];
-            this.$emit("browse-target", { type: "local", folder: this.folder });
+            if(!folder.canceled){
+                this.folder = folder.filePaths[0];
+                this.$emit("browse-target", { type: "local", folder: this.folder });
+            }
         },
     },
 };
