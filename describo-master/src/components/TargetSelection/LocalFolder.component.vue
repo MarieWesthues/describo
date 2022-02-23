@@ -6,9 +6,9 @@
 
         <div class="flex items-center justify-center">
             <div class="w-40 h-40 bg-gray-300 rounded-full">
+            </div>
         </div>
-        
-        </div>   
+
         <div class="my-4">
             <button
                 type="primary"
@@ -18,25 +18,24 @@
             > SELECT FOLDER
             </button>
         </div>
-         <div style="display: flex; flex-direction: row; align-items: center"> 
-        <div class="my-4 text-gray-600" style="font-style: italic; padding: 5px">
-                     CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
-                </div>
+        <div style="display: flex; flex-direction: row; align-items: center"> 
+            <div class="my-4 text-gray-600" style="font-style: italic; padding: 5px">
+                CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
+            </div>
             <popper
                 trigger="clickToOpen"
                 :options="{
                 placement: 'top',
                 modifiers: { offset: { offset: '0,10px' } }
                 }"
-        
-                >
-                <div class="popper my-4 text-gray-600" style="font-style:italic">
-            Lorem Ipsum 
-                </div>
-                    <button
-                        class="rounded-full bg-blue-400 w-6 h-6" style="color: white; outline-color: transparent" slot="reference">
-                        <i class="fas fa-question fa-fw"></i>
-                    </button>
+            >
+            <div class="popper my-4 text-gray-600" style="font-style:italic">
+                Lorem Ipsum 
+            </div>
+            <button
+                class="rounded-full bg-blue-400 w-6 h-6" style="color: white; outline-color: transparent" slot="reference">
+                    <i class="fas fa-question fa-fw"></i>
+                </button>
             </popper>
         </div>
     </div>

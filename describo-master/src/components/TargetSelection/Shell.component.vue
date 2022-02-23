@@ -24,9 +24,9 @@
            
             <div class="flex flex-col">
                 <local-folder-component v-if="!target"
-                            @set-target="setTarget"
-                            @browse-target="setBrowseTarget"
-                        />
+                    @set-target="setTarget"
+                    @browse-target="setBrowseTarget"
+                />
            
               <!--  <el-tabs class="mt-4 p-4 style-tab-container bg-gray-200">
                     <el-tab-pane>
