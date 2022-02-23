@@ -3,6 +3,12 @@
         <!-- <div class="text-xl font-bold mr-2">
                 Select a folder on this computer
             </div> -->
+
+        <div class="flex items-center justify-center">
+            <div class="w-40 h-40 bg-gray-300 rounded-full">
+        </div>
+        
+        </div>   
         <div class="my-4">
             <button
                 type="primary"

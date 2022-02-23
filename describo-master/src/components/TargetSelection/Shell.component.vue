@@ -22,13 +22,8 @@
             </div> -->
 
            
-        <div class="flex items-center justify-center">
-            <div class="w-40 h-40 bg-gray-300 rounded-full">
-            </div>
-        </div>
-
             <div class="flex flex-col">
-                <local-folder-component
+                <local-folder-component v-if="!target"
                             @set-target="setTarget"
                             @browse-target="setBrowseTarget"
                         />

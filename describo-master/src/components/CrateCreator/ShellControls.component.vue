@@ -9,7 +9,7 @@
                     class="focus:outline-none focus:border-2 focus:border-green-600"
                     @click="view.addItem = true"
                 >
-                    <i class="fas fa-plus"></i> add item
+                    <i class="fas fa-plus"></i> Add Property
                 </el-button>
             </div>
             <div>
