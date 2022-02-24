@@ -16,27 +16,27 @@
             />
         </div>
       
-    
             <!-- <div class="text-lg text-center text-indigo-700">
                 The RO-crate metadata file will be automatically saved to this
                 location as you construct it.
             </div> -->
+
         <div>
             <working-title-component v-if="browseTarget && !workingTitle"
                 @working-title="setWorkingTitle"
-            > </working-title-component>
+            />
         </div>
 
         <div>
-            <service-selection-component v-if="workingTitle"> </service-selection-component>    
+            <choose-repository-component v-if="workingTitle" />
         </div>
 
            
-            <div class="flex flex-col">
-                <local-folder-component v-if="!target && !browseTarget"
-                            @set-target="setTarget"
-                            @browse-target="setBrowseTarget"
-                        />
+        <div class="flex flex-col">
+            <local-folder-component v-if="!target && !browseTarget"
+                @set-target="setTarget"
+                @browse-target="setBrowseTarget"
+            />
 
               <!--  <el-tabs class="mt-4 p-4 style-tab-container bg-gray-200">
                     <el-tab-pane>
@@ -63,6 +63,7 @@
                         />
                     </el-tab-pane> -->
                 
+            <!-- PROFILE SELECTION BUTTON --->    
             <!--    <div class="flex flex-col p-4 mt-4 border" v-if="browseTarget">
                     <div class="flex flex-row">
                         <div class="text-2xl font-light text-gray-800 pt-2">
@@ -87,8 +88,8 @@
                         class="style-tree-view overflow-scroll"
                     />
                 </div>-->
-            </div>
-        </div> 
+        </div>
+    </div> 
 </template>
 
 <script>
@@ -98,8 +99,8 @@ import GoogleDriveComponent from "./GoogleDrive.component.vue";
 import MicrosoftOneDriveComponent from "./MicrosoftOneDrive.component.vue";
 import RenderSelectedTargetComponent from "./RenderSelectedTarget.component.vue";
 import FileTreeComponent from "components/FileTree/FileTree.component.vue";
-import WorkingTitleComponent from "./workingTitle.component.vue"
-import ServiceSelectionComponent from "./ServiceSelection.component.vue"
+import WorkingTitleComponent from "./WorkingTitle.component.vue";
+import ChooseRepositoryComponent from "./ChooseRepository.component.vue";
 
 export default {
     components: {
@@ -110,7 +111,7 @@ export default {
         MicrosoftOneDriveComponent,
         FileTreeComponent,
         WorkingTitleComponent,
-        ServiceSelectionComponent
+        ChooseRepositoryComponent
     },
     computed: {
         target: function() {
@@ -143,7 +144,6 @@ export default {
             this.$store.commit("setActiveProfileType", undefined);
         },
         setWorkingTitle(wtitle) {
-            //this.$store.commit("setWorkingTitle", this.workingTitle);
             this.workingTitle = undefined;
             setTimeout(() => {
                 this.workingTitle = { ...wtitle };

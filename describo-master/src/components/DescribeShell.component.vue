@@ -5,8 +5,6 @@
             v-if="!target"
         >
             <p class="my-4 text-3xl">Configure your Project</p>
-            <choose-repository-component></choose-repository-component>
-            
         </div>
 
         <div class="flex flex-col">
