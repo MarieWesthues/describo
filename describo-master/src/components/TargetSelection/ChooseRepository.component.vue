@@ -28,12 +28,27 @@ import { remote } from "electron";
 
 export default {
     data() {
-        return {}
+        return {
+  
+        }
     },   
   
     methods:{
     chooseService (idName){
-        document.getElementById(idName).style.opacity="1";
+       var logo = document.getElementById(idName)
+       if (logo.style.opacity == "0.5"){
+
+            logo.style.opacity="1";
+
+       }
+        else if(logo.style.opacity=="1"){
+        
+            logo.style.opacity="0.5";
+ 
+            
+        }
+
+       
     }
     },
 };
