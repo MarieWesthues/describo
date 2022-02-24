@@ -15,19 +15,23 @@
                 class="ml-2 text-xl text-gray-700 font-light"
             />
         </div>
+      
     
             <!-- <div class="text-lg text-center text-indigo-700">
                 The RO-crate metadata file will be automatically saved to this
                 location as you construct it.
             </div> -->
+          <div>
+            <working-title-component v-if="browseTarget"> </working-title-component>
+        </div>
 
            
             <div class="flex flex-col">
-                <local-folder-component v-if="!target"
+                <local-folder-component v-if="!target && !browseTarget"
                             @set-target="setTarget"
                             @browse-target="setBrowseTarget"
                         />
-           
+
               <!--  <el-tabs class="mt-4 p-4 style-tab-container bg-gray-200">
                     <el-tab-pane>
                        <span
@@ -53,7 +57,7 @@
                         />
                     </el-tab-pane> -->
                 
-                <div class="flex flex-col p-4 mt-4 border" v-if="browseTarget">
+            <!--    <div class="flex flex-col p-4 mt-4 border" v-if="browseTarget">
                     <div class="flex flex-row">
                         <div class="text-2xl font-light text-gray-800 pt-2">
                             describo Target
@@ -71,14 +75,14 @@
                                 <i class="fas fa-long-arrow-alt-right"></i
                             ></el-button>
                         </div>
-                    </div>
+                    </div> 
                     <file-tree-component
                         :browse-target="browseTarget"
                         class="style-tree-view overflow-scroll"
                     />
-                </div>
+                </div>-->
             </div>
-        </div>
+        </div> 
 </template>
 
 <script>
@@ -88,6 +92,8 @@ import GoogleDriveComponent from "./GoogleDrive.component.vue";
 import MicrosoftOneDriveComponent from "./MicrosoftOneDrive.component.vue";
 import RenderSelectedTargetComponent from "./RenderSelectedTarget.component.vue";
 import FileTreeComponent from "components/FileTree/FileTree.component.vue";
+import WorkingTitleComponent from "./workingTitle.component.vue"
+
 export default {
     components: {
         RenderSelectedTargetComponent,
@@ -96,6 +102,8 @@ export default {
         GoogleDriveComponent,
         MicrosoftOneDriveComponent,
         FileTreeComponent,
+        WorkingTitleComponent
+
     },
     computed: {
         target: function() {

@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import DataInspectorComponent from "./shared/DataInspector.component.vue";
+import DataInspectorComponent from "./shared/DataInspector.component.vue"; //components werden importiert
 import CrateExportComponent from "./CrateExport/CrateExport.component.vue";
 import CrateLoadingErrorsComponent from "./shared/CrateLoadingErrors.component.vue";
 import AddItemToCrateComponent from "./shared/AddItemToCrate.component.vue";
@@ -127,7 +127,7 @@ import { debounce } from "lodash";
 
 export default {
     components: {
-        DataInspectorComponent,
+        DataInspectorComponent, // auflistung der Components, um sie nutzen zu können 
         CrateExportComponent,
         CrateLoadingErrorsComponent,
         AddItemToCrateComponent,

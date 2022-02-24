@@ -5,7 +5,9 @@
             v-if="!target"
         >
             <p class="my-4 text-3xl">Configure your Project</p>
+            
         </div>
+
         <div class="flex flex-col">
             <div
                 :class="{
@@ -43,6 +45,7 @@ export default {
         TargetSelectionComponent,
         ProfileSelectionComponent,
         CrateCreator,
+        
     },
     computed: {
         target: function() {
