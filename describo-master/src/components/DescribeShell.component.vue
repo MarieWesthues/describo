@@ -5,6 +5,7 @@
             v-if="!target"
         >
             <p class="my-4 text-3xl">Configure your Project</p>
+            <choose-repository-component></choose-repository-component>
             
         </div>
 
@@ -39,12 +40,15 @@
 import TargetSelectionComponent from "components/TargetSelection/Shell.component.vue";
 import ProfileSelectionComponent from "components/ProfileSelection/Shell.component.vue";
 import CrateCreator from "components/CrateCreator/Shell.component.vue";
+import ChooseRepositoryComponent from "components/TargetSelection/ChooseRepository.component.vue"
 
 export default {
     components: {
         TargetSelectionComponent,
         ProfileSelectionComponent,
         CrateCreator,
+        ChooseRepositoryComponent
+      
         
     },
     computed: {
