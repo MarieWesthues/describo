@@ -21,8 +21,14 @@
                 The RO-crate metadata file will be automatically saved to this
                 location as you construct it.
             </div> -->
-          <div>
-            <working-title-component v-if="browseTarget"> </working-title-component>
+        <div>
+            <working-title-component v-if="browseTarget && !workingTitle"
+                @working-title="setWorkingTitle"
+            > </working-title-component>
+        </div>
+
+        <div>
+            <service-selection-component v-if="workingTitle"> </service-selection-component>    
         </div>
 
            
@@ -93,6 +99,7 @@ import MicrosoftOneDriveComponent from "./MicrosoftOneDrive.component.vue";
 import RenderSelectedTargetComponent from "./RenderSelectedTarget.component.vue";
 import FileTreeComponent from "components/FileTree/FileTree.component.vue";
 import WorkingTitleComponent from "./workingTitle.component.vue"
+import ServiceSelectionComponent from "./ServiceSelection.component.vue"
 
 export default {
     components: {
@@ -102,17 +109,21 @@ export default {
         GoogleDriveComponent,
         MicrosoftOneDriveComponent,
         FileTreeComponent,
-        WorkingTitleComponent
-
+        WorkingTitleComponent,
+        ServiceSelectionComponent
     },
     computed: {
         target: function() {
             return this.$store.state.target;
         },
+        //workingTitle: function() {
+        //    return this.$store.state.workingTitle;
+        //}
     },
     data() {
         return {
             browseTarget: undefined,
+            workingTitle: undefined,
         };
     },
     methods: {
@@ -131,6 +142,13 @@ export default {
             this.$store.commit("saveProfile", {});
             this.$store.commit("setActiveProfileType", undefined);
         },
+        setWorkingTitle(wtitle) {
+            //this.$store.commit("setWorkingTitle", this.workingTitle);
+            this.workingTitle = undefined;
+            setTimeout(() => {
+                this.workingTitle = { ...wtitle };
+            }, 100);
+        }
     },
 };
 </script>

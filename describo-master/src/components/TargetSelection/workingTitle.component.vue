@@ -6,9 +6,11 @@
     <div style="display: flex; justify-content: center">
         <form class="w-full max-w-sm">
             <div class="flex items-center border-b border-green-500 py-2">
-                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Working Title" aria-label="Full name">
-                <button class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
-            OK
+                <input v-model="workingTitle" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Working Title" aria-label="Full name">
+                <button 
+                    v-on:click="emitWorkingTitle(workingTitle)" 
+                    class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                    OK
                 </button>
             
             </div>
@@ -18,14 +20,19 @@
 </template>
 
 <script>
-import { remote } from "electron";
-
-
 export default {
     data() {
-        return {}
-    },   
-  
+        return {
+            workingTitle: undefined,
+        }
+    },
+    methods: {
+        emitWorkingTitle(workingTitle) {
+            //this.workingTitle = workingTitle;
+            this.$emit("working-title", workingTitle);
+            console.log(workingTitle); 
+        },
+    },  
 };
 
 </script>
