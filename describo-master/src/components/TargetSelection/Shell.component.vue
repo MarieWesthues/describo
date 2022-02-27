@@ -22,15 +22,20 @@
             </div> -->
 
         <div>
-            <working-title-component v-if="browseTarget && !workingTitle"
+            <working-title-component v-if="browseTarget && !workingTitle && !selectedService"
                 @working-title="setWorkingTitle"
             />
         </div>
 
         <div>
-            <choose-repository-component v-if="workingTitle" />
+            <choose-repository-component v-if="workingTitle && !selectedService" 
+            @selected-service="setServiceSelection" />
         </div>
 
+        <div>
+            <overview-component v-if="selectedService"/>
+    
+        </div>
            
         <div class="flex flex-col">
             <local-folder-component v-if="!target && !browseTarget"
@@ -101,6 +106,7 @@ import RenderSelectedTargetComponent from "./RenderSelectedTarget.component.vue"
 import FileTreeComponent from "components/FileTree/FileTree.component.vue";
 import WorkingTitleComponent from "./WorkingTitle.component.vue";
 import ChooseRepositoryComponent from "./ChooseRepository.component.vue";
+import overviewComponent from "./overview.component.vue";
 
 export default {
     components: {
@@ -111,7 +117,8 @@ export default {
         MicrosoftOneDriveComponent,
         FileTreeComponent,
         WorkingTitleComponent,
-        ChooseRepositoryComponent
+        ChooseRepositoryComponent,
+        overviewComponent
     },
     computed: {
         target: function() {
@@ -125,6 +132,7 @@ export default {
         return {
             browseTarget: undefined,
             workingTitle: undefined,
+            selectedService: undefined,
         };
     },
     methods: {
@@ -148,7 +156,15 @@ export default {
             setTimeout(() => {
                 this.workingTitle = { ...wtitle };
             }, 100);
-        }
+        },
+        setServiceSelection(service)
+            {
+            this.selectedService = undefined;
+            setTimeout(() => {
+                this.selectedService = { ...service };
+            }, 100);
+            }
+        
     },
 };
 </script>

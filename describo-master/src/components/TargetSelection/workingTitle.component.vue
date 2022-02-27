@@ -1,7 +1,10 @@
 <template>
 <div> 
-    <div class="my-4 text-gray-700" style="font-weight: bold; padding: 10px; display: flex; justify-content: center">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+    <div class="my-4 text-gray-700" style="font-weight: bold; padding: 10px;">
         DEFINE A WORKING TITLE
+    </div>
+    <tooltip-component/>
     </div>
     <div style="display: flex; justify-content: center">
         <form class="w-full max-w-sm">
@@ -19,16 +22,31 @@
 </template>
 
 <script>
+import tooltipComponent from "./tooltip.component.vue"
+
 export default {
     data() {
         return {
             workingTitle: undefined,
+    
         }
     },
+ components:{
+        tooltipComponent
+    },
+
     methods: {
         emitWorkingTitle(workingTitle) {
             //this.workingTitle = workingTitle;
                 this.$emit("working-title", workingTitle);
+                if (workingTitle==null){
+                     workingTitle = "Default";
+                     console.log(workingTitle)
+                }
+                else{
+                    console.log(workingTitle)
+                }
+                   
         },
     },  
 };
