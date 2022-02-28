@@ -52,6 +52,7 @@ export default {
                 this.$emit("browse-target", { type: "local", folder: this.folder });
             }
         },
+   
     },
 };
 </script>

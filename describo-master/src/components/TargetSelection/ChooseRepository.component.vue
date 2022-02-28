@@ -4,7 +4,7 @@
             <div class="my-4 text-gray-700" style="font-weight: bold">
                 Choose an open access repository to publish your research data
             </div>
-            <tooltip-component> $explanation </tooltip-component>
+            <tooltip-component/>
         </div>
         <div style="display: flex; justify-content: center">
             <div style="display: flex; justify-content: space-between; width: 400px;">
@@ -32,6 +32,8 @@ export default {
     data() {
         return {
             selectedService: undefined,
+            
+       
         }
     },   
     components:{
@@ -57,8 +59,11 @@ export default {
     emitSelectedService(selectedService){
         this.$emit("selected-service", selectedService);
         console.log("geht")
+    },
+    //changeExplanation(explanation){
+   //     this.explanation = "The choice is voluntarily";
+   // }
     }
-    
-    ,}
+
 };
 </script>

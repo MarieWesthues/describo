@@ -25,6 +25,7 @@
 import tooltipComponent from "./tooltip.component.vue"
 
 export default {
+    
     data() {
         return {
             workingTitle: undefined,
@@ -40,12 +41,13 @@ export default {
             //this.workingTitle = workingTitle;
                 this.$emit("working-title", workingTitle);
                 if (workingTitle==null){
-                     workingTitle = "Default";
-                     console.log(workingTitle)
+                    workingTitle = "Default";
+                    console.log(workingTitle)
                 }
                 else{
                     console.log(workingTitle)
                 }
+            return workingTitle
                    
         },
     },  
