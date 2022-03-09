@@ -28,7 +28,7 @@ export default {
     methods: {
         emitWorkingTitle(workingTitle) {
             //this.workingTitle = workingTitle;
-                this.$emit("working-title", workingTitle);
+            this.$emit("working-title", workingTitle);
         },
     },  
 };
