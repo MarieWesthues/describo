@@ -22,29 +22,14 @@
             <div class="my-4 text-gray-600" style="font-style: italic; padding: 5px">
                 CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
             </div>
-            <popper
-                trigger="clickToOpen"
-                :options="{
-                placement: 'top',
-                modifiers: { offset: { offset: '0,10px' } }
-                }"
-            >
-            <div class="popper my-4 text-gray-600" style="font-style:italic">
-                Lorem Ipsum 
-            </div>
-            <button
-                class="rounded-full bg-blue-400 w-6 h-6" style="color: white; outline-color: transparent" slot="reference">
-                    <i class="fas fa-question fa-fw"></i>
-                </button>
-            </popper>
+            <tooltip-component/>
         </div>
     </div>
 </template>
 
 <script>
 import { remote } from "electron";
-import Popper from 'vue-popperjs';
-import 'vue-popperjs/dist/vue-popper.css';
+import tooltipComponent from "./tooltip.component.vue"
 
 
 export default {
@@ -55,7 +40,7 @@ export default {
         }
     },
     components:{
-        'popper': Popper
+        tooltipComponent
     },
     methods: {
         async selectFolder() {
@@ -67,6 +52,7 @@ export default {
                 this.$emit("browse-target", { type: "local", folder: this.folder });
             }
         },
+   
     },
 };
 </script>

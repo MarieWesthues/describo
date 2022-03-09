@@ -1,7 +1,10 @@
 <template>
     <div> 
-        <div class="my-4 text-gray-700" style="font-weight: bold; padding-bottom: 50px; display: flex; justify-content: center">
-            Choose an open access repository to publish your research data
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; padding-bottom: 50px;">
+            <div class="my-4 text-gray-700" style="font-weight: bold">
+                Choose an open access repository to publish your research data
+            </div>
+            <tooltip-component/>
         </div>
         <div style="display: flex; justify-content: center">
             <div style="display: flex; justify-content: space-between; width: 400px;">
@@ -14,7 +17,7 @@
             </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding: 100px;">
-            <button class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+            <button v-on:click="emitSelectedService(selectedService)" class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
                 OK
             </button>
         </div>
@@ -23,13 +26,19 @@
 
 <script>
 import { remote } from "electron";
+import tooltipComponent from "./tooltip.component.vue" 
 
 export default {
     data() {
         return {
-  
+            selectedService: undefined,
+            
+       
         }
     },   
+    components:{
+        tooltipComponent
+    },
   
     methods:{
     chooseService (idName){
@@ -45,9 +54,16 @@ export default {
  
             
         }
+    }, 
 
-       
-    }
+    emitSelectedService(selectedService){
+        this.$emit("selected-service", selectedService);
+        console.log("geht")
     },
+    //changeExplanation(explanation){
+   //     this.explanation = "The choice is voluntarily";
+   // }
+    }
+
 };
 </script>
