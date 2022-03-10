@@ -30,6 +30,15 @@
             </div>
             <crate-creator v-if="target && profile" class="mt-2">
             </crate-creator>
+            <divider-component/>
+            <template-selection-component/>
+            <divider-component/>
+            <template-selection-component/>
+            <divider-component/>
+            <template-selection-component/>
+            <divider-component/>
+            <template-selection-component/>
+            <divider-component/>
         </div>
     </div>
 </template>
@@ -39,13 +48,17 @@ import TargetSelectionComponent from "components/TargetSelection/Shell.component
 import ProfileSelectionComponent from "components/ProfileSelection/Shell.component.vue";
 import CrateCreator from "components/CrateCreator/Shell.component.vue";
 import ChooseRepositoryComponent from "components/TargetSelection/ChooseRepository.component.vue"
+import TemplateSelectionComponent from './CrateCreator/TemplateSelection.component.vue';
+import DividerComponent from './divider.component.vue';
 
 export default {
     components: {
         TargetSelectionComponent,
         ProfileSelectionComponent,
         CrateCreator,
-        ChooseRepositoryComponent
+        ChooseRepositoryComponent,
+        TemplateSelectionComponent,
+        DividerComponent
       
         
     },
