@@ -22,7 +22,11 @@
             <div class="my-4 text-gray-600" style="font-style: italic; padding: 5px">
                 CHOOSE YOUR FOLDER OF A SPECIFIC RESEARCH PROJECT
             </div>
-            <tooltip-component/>
+            <el-tooltip content="Explanation for 'select folder'" placement="top">
+                    <el-button size="mini" type="primary" circle> 
+                        <i class="fas fa-question fa-fw"></i>
+                    </el-button>
+            </el-tooltip>
         </div>
     </div>
 </template>
@@ -56,3 +60,11 @@ export default {
     },
 };
 </script>
+<style scoped>
+.el-icon-question:before {
+    font-size: x-large;
+}
+.el-button--mini.is-circle{
+    padding: 4px;
+}
+</style>

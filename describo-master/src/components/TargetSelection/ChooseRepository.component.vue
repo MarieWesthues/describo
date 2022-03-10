@@ -58,7 +58,7 @@ export default {
 
     emitSelectedService(selectedService){
         this.$emit("selected-service", selectedService);
-        console.log("geht")
+        
     },
     //changeExplanation(explanation){
    //     this.explanation = "The choice is voluntarily";
