@@ -30,15 +30,14 @@
                     <img src="https://i.ibb.co/FxScXJy/Zenodo-gradient-200.png" alt="Zenodo-gradient-200" border="0" id="zenodo">
             </div>
             <el-tooltip content="Top center" placement="top">
-            <el-button>Dark</el-button>
-</el-tooltip>
+                <el-button>Dark</el-button>
+            </el-tooltip>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-import { remote } from "electron"; 
 export default {
     data() {
         return {

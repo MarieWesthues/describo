@@ -33,11 +33,7 @@
             <divider-component/>
             <template-selection-component/>
             <divider-component/>
-            <template-selection-component/>
-            <divider-component/>
-            <template-selection-component/>
-            <divider-component/>
-            <template-selection-component/>
+            <project-metadata-component/>
             <divider-component/>
         </div>
     </div>
@@ -50,6 +46,7 @@ import CrateCreator from "components/CrateCreator/Shell.component.vue";
 import ChooseRepositoryComponent from "components/TargetSelection/ChooseRepository.component.vue"
 import TemplateSelectionComponent from './CrateCreator/TemplateSelection.component.vue';
 import DividerComponent from './divider.component.vue';
+import ProjectMetadataComponent from './CrateCreator/ProjectMetadata.component.vue';
 
 export default {
     components: {
@@ -58,12 +55,11 @@ export default {
         CrateCreator,
         ChooseRepositoryComponent,
         TemplateSelectionComponent,
-        DividerComponent
-      
-        
+        DividerComponent,
+        ProjectMetadataComponent        
     },
     computed: {
-        target: function() {
+            target: function() {
             return this.$store.state.target;
         },
         profile: function() {
