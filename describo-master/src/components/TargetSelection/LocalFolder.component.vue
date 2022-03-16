@@ -33,7 +33,6 @@
 
 <script>
 import { remote } from "electron";
-import tooltipComponent from "./tooltip.component.vue"
 
 
 export default {
@@ -44,7 +43,7 @@ export default {
         }
     },
     components:{
-        tooltipComponent
+
     },
     methods: {
         async selectFolder() {

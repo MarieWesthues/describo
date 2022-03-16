@@ -35,6 +35,7 @@
             <divider-component/>
             <project-metadata-component/>
             <divider-component/>
+            <confirm-publish/>
         </div>
     </div>
 </template>
@@ -47,6 +48,7 @@ import ChooseRepositoryComponent from "components/TargetSelection/ChooseReposito
 import TemplateSelectionComponent from './CrateCreator/TemplateSelection.component.vue';
 import DividerComponent from './divider.component.vue';
 import ProjectMetadataComponent from './CrateCreator/ProjectMetadata.component.vue';
+import ConfirmPublish from './publish/ConfirmPublish.vue'
 
 export default {
     components: {
@@ -56,7 +58,8 @@ export default {
         ChooseRepositoryComponent,
         TemplateSelectionComponent,
         DividerComponent,
-        ProjectMetadataComponent        
+        ProjectMetadataComponent,      
+        ConfirmPublish  
     },
     computed: {
             target: function() {
