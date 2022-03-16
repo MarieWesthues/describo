@@ -1,10 +1,14 @@
 <template>
     <div> 
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; padding-bottom: 50px;">
-            <div class="my-4 text-gray-700" style="font-weight: bold">
-                Choose an open access repository to publish your research data
+            <div class="my-4 text-gray-700" style="font-weight: bold; padding: 5px;">
+                Choose an open access repository to publish your research data   
             </div>
-            <tooltip-component/>
+            <el-tooltip content="Explanation for 'choose repository'" placement="top">
+                    <el-button size="mini" type="primary" circle> 
+                        <i class="fas fa-question fa-fw"></i>
+                    </el-button>
+            </el-tooltip>
         </div>
         <div style="display: flex; justify-content: center">
             <div style="display: flex; justify-content: space-between; width: 400px;">
@@ -67,3 +71,11 @@ export default {
 
 };
 </script>
+<style scoped>
+.el-icon-question:before {
+    font-size: x-large;
+}
+.el-button--mini.is-circle{
+    padding: 3px;
+}
+</style>

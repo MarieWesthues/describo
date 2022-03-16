@@ -65,6 +65,6 @@ export default {
     font-size: x-large;
 }
 .el-button--mini.is-circle{
-    padding: 4px;
+    padding: 3px;
 }
 </style>

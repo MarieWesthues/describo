@@ -4,7 +4,11 @@
     <div class="my-4 text-gray-700" style="font-weight: bold; padding: 10px;">
         DEFINE A WORKING TITLE
     </div>
-    <tooltip-component/>
+    <el-tooltip content="Explanation for 'working title'" placement="top">
+                    <el-button size="mini" type="primary" circle> 
+                        <i class="fas fa-question fa-fw"></i>
+                    </el-button>
+            </el-tooltip>
     </div>
     <div style="display: flex; justify-content: center">
         <form class="w-full max-w-sm">
@@ -22,8 +26,6 @@
 </template>
 
 <script>
-import tooltipComponent from "./tooltip.component.vue"
-
 export default {
     
     data() {
@@ -33,7 +35,6 @@ export default {
         }
     },
     components:{
-        tooltipComponent
     },
 
     methods: {
@@ -50,3 +51,11 @@ export default {
 };
 
 </script>
+<style>
+.el-icon-question:before {
+    font-size: x-large;
+}
+.el-button--mini.is-circle{
+    padding: 3px;
+}
+</style>
