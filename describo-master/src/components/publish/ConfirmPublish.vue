@@ -32,12 +32,24 @@
                     type="primary"
                     class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 border border-green-500 rounded shadow"
                     style="outline-color: #60a5fa"
+                    @click="centerDialogVisible = true"
                 > PUBLISH
                 </button>
             </div>
         </div>
             
 
+        <el-dialog
+        title="CAUTION"
+        :visible.sync="centerDialogVisible"
+        width="40%"
+        center>
+        <span>After publishing, you will not be able to change any files or metadata of this research project on sciebo RDS.</span>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="centerDialogVisible = false">Cancel</el-button>
+            <el-button type="primary" @click="centerDialogVisible = false">Publish</el-button>
+        </span>
+        </el-dialog>
     
 
     </div>
@@ -48,6 +60,11 @@
 <script>
 
 export default {
-};
+    data() {
+        return {
+         centerDialogVisible: false
+      };
+    }
+  };
 
 </script>

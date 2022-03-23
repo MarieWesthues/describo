@@ -6,6 +6,7 @@
 
         <div class="flex items-center justify-center">
             <div class="w-40 h-40 bg-gray-300 rounded-full">
+                
             </div>
         </div>
 

@@ -17,10 +17,13 @@
             </button>
             <button
                 type="primary"
+                
                 class="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-4 border border-green-700 rounded shadow"
-                style="outline-color: rgb(21 128 61)"> 
+                style="outline-color: rgb(21 128 61)" @click="centerDialogVisible = true"> 
                     Load Property Set
-            </button>
+                
+            </button>     
+
         </div>
         <div class="absolute bottom-16 left-0 ml-16">
             <div class="my-4">
@@ -42,5 +45,46 @@
                 </button>
             </div>
         </div>
+
+        <el-dialog
+                title="Choose a property set"
+                :visible.sync="centerDialogVisible"
+                width="40%"
+                center>
+                <span> 
+                    <el-form>
+                         <el-form-item >
+                            <el-radio-group v-model="form.type" style="display: flex; flex-direction: column;">
+                            <el-radio label="Property Set 1" name="type"></el-radio><!-- sind hier nur Platzhalter Namen. Die Labels sollten den abgespeicherten Propety Sets entsprechen-->
+                            <el-radio label="Property Set 2" name="type"></el-radio>
+                            <el-radio label="Social Media Analysis Set" name="type"></el-radio>
+                            <el-radio label="Project XYZ Set" name="type"></el-radio>
+                            </el-radio-group>
+                         </el-form-item>
+                    </el-form>
+                </span>
+                <span slot="footer" class="dialog-footer">
+                    <el-button type="primary" @click="centerDialogVisible = false">Save</el-button>
+                </span>
+        </el-dialog>
     </div>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return {
+         centerDialogVisible: false, 
+         form:{
+             type:[]
+         }
+        }
+    }
+};
+</script>
+<style>
+.el-radio {
+    padding: 3px;
+}
+</style>
