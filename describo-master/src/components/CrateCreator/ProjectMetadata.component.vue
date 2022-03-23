@@ -8,22 +8,40 @@
                 <input class="ml-16 bg-white appearance-none border-2 border-gray-400 rounded w-3/5 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-700" id="project-name" type="text" value="*working Title des Projektes sollte hier Default als Vorschlag schon drin stehen">
             </div>
         </form>
-        <div class="my-4 mx-16">
-            <button
-                type="primary"
-                class="mr-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 border border-green-500 rounded shadow"
-                style="outline-color: rgb(34 197 94)"> 
-                    &lt;/&gt; Add Property
-            </button>
-            <button
-                type="primary"
-                
-                class="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-4 border border-green-700 rounded shadow"
-                style="outline-color: rgb(21 128 61)" @click="centerDialogVisible = true"> 
-                    Load Property Set
-                
-            </button>     
+        <div class="flex flex-row justify-between">
+            <div class="my-4 mx-16">
+                <button
+                    type="primary"
+                    class="mr-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 border border-green-500 rounded shadow"
+                    style="outline-color: rgb(34 197 94)"> 
+                        &lt;/&gt; Add Property
+                </button>
+                <button
+                    type="primary"
+                    
+                    class="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-4 border border-green-700 rounded shadow"
+                    style="outline-color: rgb(21 128 61)" @click="loadPropertySetModal = true"> 
+                        Load Property Set
+                    
+                </button>     
 
+            </div>
+            <div class="my-4 mx-16">
+                <button
+                    type="primary"
+                    class="mr-2 bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-4 border border-blue-800 rounded shadow"
+                    style="outline-color: rgb(30 64 175)" @click="savePropertySetModal = true"> 
+                        Save as Property Set
+                </button>
+                <button
+                    type="primary"
+                    
+                    class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-gray-600 rounded shadow"
+                    style="outline-color: rgb(75 85 99)" @click="saveTemplateModal = true"> 
+                        Save as Template
+                    
+                </button>     
+            </div>
         </div>
         <div class="absolute bottom-16 left-0 ml-16">
             <div class="my-4">
@@ -48,7 +66,7 @@
 
         <el-dialog
                 title="Choose a property set"
-                :visible.sync="centerDialogVisible"
+                :visible.sync="loadPropertySetModal"
                 width="40%"
                 center>
                 <span> 
@@ -64,7 +82,39 @@
                     </el-form>
                 </span>
                 <span slot="footer" class="dialog-footer">
-                    <el-button type="primary" @click="centerDialogVisible = false">Save</el-button>
+                    <el-button type="primary" @click="loadPropertySetModal = false">Save</el-button>
+                </span>
+        </el-dialog>
+        <el-dialog
+                title="Save as a property set"
+                :visible.sync="savePropertySetModal"
+                width="40%"
+                center>
+                <span> 
+                    <el-form>
+                         <el-form-item >
+                            <el-input v-model="form.property_set_name"></el-input>
+                         </el-form-item>
+                    </el-form>
+                </span>
+                <span slot="footer" class="dialog-footer">
+                    <el-button type="primary" @click="savePropertySetModal = false">Save</el-button>
+                </span>
+        </el-dialog>
+        <el-dialog
+                title="Save as a template"
+                :visible.sync="saveTemplateModal"
+                width="40%"
+                center>
+                <span> 
+                    <el-form>
+                         <el-form-item >
+                            <el-input v-model="form.template_name"></el-input>
+                         </el-form-item>
+                    </el-form>
+                </span>
+                <span slot="footer" class="dialog-footer">
+                    <el-button type="primary" @click="saveTemplateModal = false">Save</el-button>
                 </span>
         </el-dialog>
     </div>
@@ -75,10 +125,12 @@
 export default {
     data() {
         return {
-         centerDialogVisible: false, 
-         form:{
-             type:[]
-         }
+            loadPropertySetModal: false, 
+            savePropertySetModal: false,
+            saveTemplateModal: false,
+            form:{
+                property_set_name: "test",
+            }
         }
     }
 };
