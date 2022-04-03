@@ -2,7 +2,7 @@
     <div class="flex flex-col">
         <div class="flex flex-row">
             <component
-                class="flex-grow"
+                class="py-2"
                 v-bind:is="component"
                 :template="template"
                 :reference="reference"

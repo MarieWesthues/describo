@@ -1,28 +1,19 @@
 <template>
+
     <div
-        class="flex flex-col my-1 p-2"
+        class="flex flex-row mb-2 mx-16 pb-2 border-b-4"
         :class="{
-            'border-orange-600 border-l-4 bg-red-200': showAlert(input),
             'bg-yellow-400 py-6': view.property,
             hidden: input.group !== 'important' && !show,
-            'bg-green-200': saved,
-            'hover:bg-gray-200': !saved,
         }"
     >
         <!-- input label -->
-        <div class="my-auto text-left text-sm pr-2 flex flex-row">
-            <div v-show="showAlert(input)" class="text-orange-600 mx-2">
-                <i class="fas fa-asterisk"></i>
-            </div>
+        <div class="my-2 text-2xl text-gray-700" style="font-weight: bold; padding: 10px;">
             <div class="text-lg">
                 {{ renderLabel(input) }}
             </div>
-            <div
-                class="text-xs text-gray-600 mx-4 pt-1"
-                v-if="showAlert(input)"
-            >
-                This property is required.
-            </div>
+        </div>
+            <!--
             <div class="flex-grow"></div>
             <div class="flex flex-row space-x-2">
                 <render-profile-item-linker-component
@@ -48,16 +39,16 @@
                         <i class="fas fa-question fa-fw"></i>
                     </el-button>
                 </div>
-            </div>
-        </div>
-        <div class="text-sm text-gray-600">{{ input.help }}</div>
+            </div>-->
+        
+        <!--<div class="align-middle text-sm my-4 text-gray-600">{{ input.help }}</div>-->
         <!-- end: input label -->
 
         <div v-if="!input.multiple">
             <!-- render simple types in place -->
             <div v-if="isSimpleType(input['@type'])">
                 <render-core-component
-                    class="flex-grow my-1"
+                    class="flex-grow my-1 ml-32"
                     :template="input"
                     :reference="container.uuid"
                     @saved="notifySaved"
@@ -102,6 +93,18 @@
             </div>
         </div>
 
+        <div>
+            <el-button
+                @click="loadPropertyDefinition(input)"
+                size="mini"
+                type="primary"
+                round
+                class="focus:outline-none focus:border-2 focus:border-blue-600"
+            >
+                <i class="fas fa-question fa-fw"></i>
+            </el-button>
+        </div>
+
         <!-- data inspector drawer-->
         <definition-drawer-component
             :drawer="view.definitionDrawer"
@@ -112,6 +115,7 @@
         />
         <!-- end: data inspector drawer-->
     </div>
+    
 </template>
 
 <script>

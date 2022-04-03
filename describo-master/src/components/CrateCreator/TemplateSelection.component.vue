@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div>
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
             <div class="my-4 text-2xl text-gray-700" style="font-weight: bold; padding: 10px;">
                 Select a Template
@@ -57,6 +57,10 @@
 <script>
 
 export default {
+    components: {},
+    data() {
+        return {};
+    },
 };
 
 </script>

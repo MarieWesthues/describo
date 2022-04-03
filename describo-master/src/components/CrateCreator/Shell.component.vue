@@ -1,5 +1,6 @@
 <template>
     <div class="flex flex-col">
+        <!--
         <div v-if="error">
             <el-alert
                 :title="error"
@@ -17,6 +18,7 @@
         <div v-else>
             <shell-controls-component @error="(e) => (error = e)" />
         </div>
+        -->
         <!-- loading indicator -->
         <el-progress
             class="my-2"
@@ -30,9 +32,11 @@
             v-model="activeTab"
             :stretch="true"
             tab-position="left"
-            class="mt-4 border-t-2 pt-4"
+            class="mt-4"
             v-if="ready && !showRootDatasetSelector"
         >
+
+            <!--
             <el-tab-pane label="Root Dataset" name="crate" class="m-2">
                 <span
                     slot="label"
@@ -50,9 +54,11 @@
                         Root Dataset
                     </div>
                 </span>
+                -->
                 <root-dataset-component v-if="activeTab === 'crate'" />
-            </el-tab-pane>
+            <!--</el-tab-pane>-->
 
+            <!--
             <el-tab-pane label="Crate Contents" name="parts">
                 <span
                     slot="label"
@@ -90,6 +96,7 @@
                     v-if="activeTab === type"
                 />
             </el-tab-pane>
+            -->
         </el-tabs>
     </div>
 </template>
